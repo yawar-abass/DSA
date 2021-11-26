@@ -1,8 +1,10 @@
+import java.util.Arrays;
+
 public class QuickSort {
     public static void main(String[] args) {
         int arr[]={1,2,5,4,3};
         quicks(arr,0,arr.length-1);
-        System.out.println(Artr);
+        System.out.println(Arrays.toString(arr));
     }
     public static void quicks(int []nums,int low, int hi){
         if(low>=hi){
