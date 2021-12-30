@@ -1,27 +1,32 @@
 package BasicPrograms;
 
-public class Oops {
+class Sample implements Runnable{
+    private Thread t;
+    private  String threadName;
+    Sample(String threadName){
+        this.threadName= threadName;
+    }
+    public void run() {
+            while (true)
+                System.out.println(threadName);
+    }
+    public void start(){
+        if(t==null){
+            t = new Thread(this,threadName);
+            t.start();
+        }
+    }
+
+
+
+
+}
+public class Oops{
     public static void main(String[] args) {
-        Fruits ft = new Fruits("Apple","Banana");
-        ft.display();
-        Fruits ftt = new Fruits("Mango","Grapes");
-        ftt.display();
+        Sample A= new Sample("A");
+        Sample B = new Sample("B");
+        B.start();
+        A.start();
     }
 }
-class Fruits{
-    String fruit1 ;
-    String  fruit2 ;
-    Fruits(String fruit1,String fruit2) {
-        this.fruit1 = fruit1;
-        this.fruit2 = fruit2;
 
-    }
-    public void display(){
-        System.out.println(fruit1);
-        System.out.println(fruit2);
-    }
-    public int num(){
-
-        return 34;
-    }
-}

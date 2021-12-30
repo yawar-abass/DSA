@@ -1,7 +1,7 @@
 package oops;
 
 import com.sun.security.jgss.GSSUtil;
-
+//Inheritance and other stuff like that
 public class A {
     int a;
     int b ;
