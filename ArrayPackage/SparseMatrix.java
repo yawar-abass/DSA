@@ -1,6 +1,4 @@
-package Arrays;
-
-import java.util.Arrays;
+package ArrayPackage;
 
 public class SparseMatrix {
     public static void main(String args[]){
