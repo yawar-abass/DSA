@@ -2,18 +2,43 @@ package BasicPrograms;
 import  java.util.*;
 public class Cpp {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int l=2;
-        for (int i = 0; i <5; i++) {
-            for (int j = 0; j <=i; j++) {
-                for (int k = 0; k < l; k++) {
-                    System.out.print("  ");
-                    l--;
+        System.out.println(isValid("(){}[]"));
+    }
+        public static boolean isValid(String s) {
+            if(s.length()<0){
+                return false;
+            }
+            Stack<Character> stk = new Stack<>();
+            for(int i=0;i<s.length();i++){
+                char ch = s.charAt(i);
+                if(ch == '(' || ch == '{' || ch == '['){
+                    stk.push(ch);
+                    continue;
                 }
-                System.out.print(" * ");
-                     }
-                System.out.println();
-             }
+                else if(ch == ')'){
+                    if(stk.peek() != '('){
+                        return false;
+                    }
+                    stk.pop();
+                }
+                else if(ch == '}'){
+                    if(stk.peek() != '{'){
+                        return false;
+                    }
+                    stk.pop();
+                }
+                else if(ch == ']'){
+                    if(stk.peek() != '['){
+                        return false;
+                    }
+                    stk.pop();
+                }
+            }
+            if(stk.isEmpty()){
+                return true;
+            }
+            return false;
         }
     }
+
 

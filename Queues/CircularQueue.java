@@ -81,79 +81,21 @@ public class CircularQueue {
        private boolean isEmpty() {
               return front == -1;
        }
+       // main method
+       public static void main(String[] args) {
+                    CircularQueue cq = new CircularQueue();
+                    cq.insert(1);
+                    cq.insert(2);
+                    cq.insert(3);
+                    cq.insert(4);
+                    cq.insert(5);
+                    cq.display();
+                    cq.delete();
+                    cq.display();
+                    cq.insert(1);
+                    cq.display();
       }
-      class Main{
-             public static void main(String[] args) {
-//                    CircularQueue cq = new CircularQueue();
-//                    cq.insert(1);
-//                    cq.insert(2);
-//                    cq.insert(3);
-//                    cq.insert(4);
-//                    cq.insert(5);
-//                    cq.display();
-//                    cq.delete();
-//                    cq.display();
-//                    cq.insert(1);
-//                    cq.display();
-                    // Linked list one
-                    List_Rprst lr = new List_Rprst();
-                    lr.insert(12);
-                    lr.insert(13);
-                    lr.insert(14);
-                    lr.insert(15);
-                    lr.display();
-                    lr.delete();
-                    lr.display();
-                    lr.insert(12);
-                    lr.display();
-             }
+
       }
-      // Linked List Representation
-      class List_Rprst{
-          Node front;
-           Node rear;
-          class Node{
-                 int val;
-                 Node next;
-                 Node(int val){
-                        this.val = val;
-                 }
-          }
-          public void insert(int val){
-                 Node node = new Node(val);
-                 if(front == null){
-                        front =node;
-                        rear = node;
-                        rear.next= front;
-                        return;
-                 }
-                 node.next =front;
-                 rear.next =node;
-                 rear =node;
-          }
-          public int delete(){
-                 if(front == null){
-                        System.out.println("List is empty");
-                        return -1;
-                 }
-                 int val = front.val;
-                 if(front == rear){
-                        front =null;
-                        rear =null;
-                        return val;
-                 }
-                 front = front.next;
-                 rear.next = front;
-                 return val;
-          }
-          // Display function
-             public void display(){
-                 Node temp = front;
-                 while (temp!=rear){
-                        System.out.print(temp.val+" ");
-                        temp = temp.next;
-                 }
-                    System.out.print(rear.val+" ");
-                    System.out.println();
-             }
-      }
+
+
