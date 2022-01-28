@@ -1,5 +1,7 @@
 package Hashing;
 
-public class HashTable {
-    
+import java.util.ArrayList;
+
+public class HashTable<K,V> {
+
 }
