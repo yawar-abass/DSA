@@ -1,15 +1,14 @@
-package BasicPrograms;
+package Sorting;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 
-public class Practice {
+public class MergeSort {
     public static void main(String[] args) {
-        int arr[] = {5,2,4,6,1,3};
+        int []arr = {5,2,4,6,1,3};
         System.out.println(Arrays.toString(mergeSort(arr)));
     }
 
-    public static  int[] mergeSort(int arr[]){
+    public static  int[] mergeSort(int []arr){
         if(arr.length == 1){
             return arr;
         }
@@ -30,13 +29,12 @@ public class Practice {
             if(left[i]<right[j]){
                 mix[k]= left[i];
                 i++;
-                k++;
             }
             else {
                 mix[k]=right[j];
                 j++;
-                k++;
             }
+            k++;
         }
 
         while (i<left.length){
@@ -51,7 +49,4 @@ public class Practice {
         }
         return mix;
     }
-
-
 }
-
