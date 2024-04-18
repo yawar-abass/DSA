@@ -5,18 +5,20 @@ import java.util.Arrays;
 public class LearnArrays {
     public static void main(String[] args) {
         // to create an array
-        int [] sampleArray = new int[5];
+        int [] sampleArray = {12,13,14,15,16};
+        int index =2;
+        int value = 144;
 
-        int [][] threeDimn = new int[2][3];
-        for (int i = 0; i <threeDimn.length ; i++) {
-            for (int j = 0; j < threeDimn[i].length; j++) {
-                threeDimn[i][j]=i+j;
-                System.out.println(threeDimn[i][j]);
+        for (int i = sampleArray.length-1; i >=index ; i--) {
+            if(i==index){
+                sampleArray[i]= value;
+                break;
             }
-
+            sampleArray[i]= sampleArray[i-1];
         }
+        System.out.println(Arrays.toString(sampleArray));
 
 
-        System.out.println(Arrays.toString(threeDimn));
+
     }
 }
